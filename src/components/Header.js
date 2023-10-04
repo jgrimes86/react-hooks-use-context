@@ -4,7 +4,7 @@ import DarkModeToggle from "./DarkModeToggle";
 import defaultUser from "../data";
 import { UserContext } from "../context/user";
 
-function Header({ theme, setTheme }) {
+function Header() {
   const {user, setUser} = useContext(UserContext)
 
   function handleLogin() {
@@ -19,10 +19,10 @@ function Header({ theme, setTheme }) {
     <header>
       <h1>React Context</h1>
       <nav>
-        <ThemedButton onClick={handleLogin} theme={theme}>
+        <ThemedButton onClick={handleLogin} >
           {user ? "Logout" : "Login"}
         </ThemedButton>
-        <DarkModeToggle theme={theme} setTheme={setTheme} />
+        <DarkModeToggle />
       </nav>
     </header>
   );
